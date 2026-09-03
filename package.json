@@ -1,0 +1,33 @@
+{
+  "name": "phone-remote",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Phone Remote: el teléfono como mando de una página web, por giroscopio y WebRTC.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "serve": "node server/index.js",
+    "start": "npm run build && node server/index.js",
+    "lint": "oxlint"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "peer": "^1.0.2",
+    "peerjs": "^1.5.5",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/qrcode": "^1.5.5",
+    "oxlint": "^1.79.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2"
+  },
+  "optionalDependencies": {
+    "selfsigned": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

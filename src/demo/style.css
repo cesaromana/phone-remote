@@ -1,0 +1,100 @@
+:root {
+  --paper: #0d0c0b;
+  --ink: #f0ece4;
+  --red: #ff5a42;
+  --yellow: #f5d547;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.5 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+  overscroll-behavior: none;
+}
+
+#stage { display: block; width: 100vw; height: 100dvh; }
+
+#hud {
+  position: fixed;
+  inset: 16px 16px auto;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+#card {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+}
+
+#card[hidden] { display: none; }
+#card canvas { border: 2px solid var(--ink); }
+
+.note { color: var(--yellow); margin: 0; }
+
+/* El mando ---------------------------------------------------------------- */
+
+.phone {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 14px;
+  padding: 20px;
+  height: 100dvh;
+  touch-action: none;
+  user-select: none;
+}
+
+.phone h1 { font-size: 15px; margin: 0; text-transform: uppercase; letter-spacing: 0.3em; }
+
+button {
+  font: inherit;
+  color: var(--ink);
+  background: none;
+  border: 2px solid var(--ink);
+  padding: 14px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+#start { align-self: center; }
+
+/* El grupo no forma caja propia: sus hijos ocupan las filas del mando. */
+#pad { display: contents; }
+#pad[hidden] { display: none; }
+
+#drag {
+  border: 2px dashed color-mix(in srgb, var(--ink) 40%, transparent);
+  display: grid;
+  place-content: center;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+.keys { display: flex; gap: 14px; justify-content: center; }
+
+.keys button {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  font-size: 22px;
+  transition: transform 120ms ease-out, background 120ms ease-out;
+}
+
+.keys button.is-down { background: var(--red); transform: scale(0.94); }
+
+.thin {
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+  font-size: 13px;
+}

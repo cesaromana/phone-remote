@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phone Remote · pantalla</title>
+    <link rel="stylesheet" href="/src/demo/style.css" />
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <div id="hud">
+      <span>phone remote · demo</span>
+      <span>aciertos <span id="score">0</span></span>
+    </div>
+    <div id="card">
+      <canvas id="qr" width="220" height="220"></canvas>
+      <p class="note" id="note">conectando…</p>
+      <p>a dispara · b vuelve a centrar</p>
+      <a class="thin" id="link" target="_blank" rel="noreferrer" hidden>abrir el mando en esta máquina</a>
+    </div>
+    <script type="module" src="/src/demo/screen.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <title>Phone Remote</title>
+    <link rel="stylesheet" href="/src/demo/style.css" />
+  </head>
+  <body>
+    <main class="phone">
+      <header>
+        <h1>remote</h1>
+        <p class="note" id="note">enlazando…</p>
+      </header>
+      <button id="start">tocar para empezar</button>
+      <div id="pad" hidden>
+        <div id="drag">arrastrá acá para desplazar</div>
+        <div class="keys">
+          <button data-btn="b">B</button>
+          <button data-btn="a">A</button>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/demo/pad.ts"></script>
+  </body>
+</html>
